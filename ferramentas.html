@@ -1,0 +1,97 @@
+<!-- ferramentas.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferramentas Interativas - Portal Enfermagem</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./style/style.css"></head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ps-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./assets/logo.PNG" alt="logo" class="img-fluid" width="50" height="50"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Erin</a></li>
+                <li class="nav-item"><a class="nav-link" href="recursos.html">Recursos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="ferramentas.html">Ferramentas</a></li>
+                <li class="nav-item"><a class="nav-link" href="forum.html">Fórum</a></li>
+                <li class="nav-item"><a class="nav-link" href="tutoriais.html">Tutoriais</a></li>
+                <li class="nav-item"><a class="nav-link" href="curiosidades.html">Curiosidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <div class="container mt-5">
+    <h2 class="section-title mb-4">Calculadora de Dosagem</h2>
+    <form id="calcForm" class="row g-3 mb-5">
+      <div class="col-md-4">
+        <label class="form-label">Peso (kg)</label>
+        <input type="number" step="0.1" class="form-control" name="peso">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Dose (mg/kg)</label>
+        <input type="number" step="0.1" class="form-control" name="dose">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Conc. (mg/mL)</label>
+        <input type="number" step="0.1" class="form-control" name="concentracao">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Calcular Volume (mL)</button>
+      </div>
+      <div class="col-12">
+        <p id="calcResult" class="fs-5 mt-2"></p>
+      </div>
+    </form>
+    <h2 class="section-title mb-4">Checklists Interativos</h2>
+    <div class="mb-4">
+      <h5>Checklist de EPIs</h5>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="epi1">
+        <label class="form-check-label" for="epi1">Luvas</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="epi2">
+        <label class="form-check-label" for="epi2">Máscara</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="epi3">
+        <label class="form-check-label" for="epi3">Avental</label>
+      </div>
+      <p class="mt-2" id="epiResult"></p>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Portal Enfermagem</p>
+    <a href="https://instagram.com/enfermeiraerinm" target="_blank"><i class="bi bi-instagram"></i> @enfermeiraerinm</a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Dosagem
+    document.getElementById('calcForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      const peso = parseFloat(data.get('peso'));
+      const dose = parseFloat(data.get('dose'));
+      const conc = parseFloat(data.get('concentracao'));
+      if(peso>0 && dose>0 && conc>0){
+        const volume = (peso * dose) / conc;
+        document.getElementById('calcResult').textContent = `Volume: ${volume.toFixed(2)} mL`;
+      }
+    });
+    // EPIs
+    const checkboxes = ['epi1','epi2','epi3'];
+    checkboxes.forEach(id => document.getElementById(id).addEventListener('change', ()=>{
+      const done = checkboxes.filter(i => document.getElementById(i).checked).length;
+      document.getElementById('epiResult').textContent = `Itens selecionados: ${done} de ${checkboxes.length}`;
+    }));
+  </script>
+</body>
+</html>

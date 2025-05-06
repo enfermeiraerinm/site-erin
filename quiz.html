@@ -1,0 +1,153 @@
+<!-- quiz.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Interativo - Portal Enfermagem</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ps-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./assets/logo.PNG" alt="logo" class="img-fluid" width="50" height="50"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Erin</a></li>
+                <li class="nav-item"><a class="nav-link" href="recursos.html">Recursos</a></li>
+                <li class="nav-item"><a class="nav-link" href="ferramentas.html">Ferramentas</a></li>
+                <li class="nav-item"><a class="nav-link" href="forum.html">Fórum</a></li>
+                <li class="nav-item"><a class="nav-link" href="tutoriais.html">Tutoriais</a></li>
+                <li class="nav-item"><a class="nav-link" href="curiosidades.html">Curiosidades</a></li>
+                <li class="nav-item"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Quiz de Conhecimentos em Enfermagem</h2>
+    <form id="quizForm">
+            <!-- 10 questões -->
+            <div class="mb-3">
+                <label class="form-label">1. Local correto para injeção intramuscular no glúteo:</label>
+                <select class="form-select" name="q1">
+                  <option value="">Escolha</option>
+                  <option value="correto">Quadrante superior externo</option>
+                  <option value="errado">Quadrante inferior medial</option>
+                  <option value="errado">Região sacral</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">2. Cor da cânula venosa calibre 22G:</label>
+                <select class="form-select" name="q2">
+                  <option value="">Escolha</option>
+                  <option value="correto">Azul</option>
+                  <option value="errado">Amarela</option>
+                  <option value="errado">Verde</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">3. Primeiro passo na técnica de calçar luvas estéreis:</label>
+                <select class="form-select" name="q3">
+                  <option value="">Escolha</option>
+                  <option value="correto">Lavar as mãos adequadamente</option>
+                  <option value="errado">Abrir o pacote com luvas sujas</option>
+                  <option value="errado">Secar mãos com toalha usada</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">4. Concentração de cloreto de sódio em soro fisiológico 0,9%:</label>
+                <select class="form-select" name="q4">
+                  <option value="">Escolha</option>
+                  <option value="correto">0,9%</option>
+                  <option value="errado">0,45%</option>
+                  <option value="errado">5,0%</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">5. Sinal de infiltração em terapia IV:</label>
+                <select class="form-select" name="q5">
+                  <option value="">Escolha</option>
+                  <option value="correto">Edema e dor no local</option>
+                  <option value="errado">Ausência de retorno sanguíneo apenas</option>
+                  <option value="errado">Taquicardia</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">6. Escala de Glasgow avalia:</label>
+                <select class="form-select" name="q6">
+                  <option value="">Escolha</option>
+                  <option value="correto">Nível de consciência</option>
+                  <option value="errado">Saturação de oxigênio</option>
+                  <option value="errado">Frequência respiratória</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">7. Volume de soro fisiológico em bolus adulto padrão:</label>
+                <select class="form-select" name="q7">
+                  <option value="">Escolha</option>
+                  <option value="correto">500–1000 mL</option>
+                  <option value="errado">100–200 mL</option>
+                  <option value="errado">2000 mL</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">8. Sinal de SIRS (síndrome da resposta inflamatória):</label>
+                <select class="form-select" name="q8">
+                  <option value="">Escolha</option>
+                  <option value="correto">Temperatura > 38°C ou < 36°C</option>
+                  <option value="errado">Pressão arterial sistólica > 160 mmHg</option>
+                  <option value="errado">Frequência cardíaca < 60 bpm</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">9. Quando trocar o equipo de soro contínuo:</label>
+                <select class="form-select" name="q9">
+                  <option value="">Escolha</option>
+                  <option value="correto">A cada 72 horas</option>
+                  <option value="errado">A cada 24 horas</option>
+                  <option value="errado">A cada 7 dias</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">10. Teste de Allen verifica a permeabilidade de:</label>
+                <select class="form-select" name="q10">
+                  <option value="">Escolha</option>
+                  <option value="correto">Arteria radial e ulnar</option>
+                  <option value="errado">Veia safena magna</option>
+                  <option value="errado">Veia jugular interna</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar Respostas</button>
+    </form>
+    <div id="quizResult" class="mt-4 fs-5 fw-bold"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Portal Enfermagem</p>
+    <a href="https://instagram.com/enfermeiraerinm" target="_blank"><i class="bi bi-instagram"></i> @enfermeiraerinm</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      let score = 0;
+      for (let i=1; i<=10; i++) {
+        if (data.get('q'+i) === 'correto') score++;
+      }
+      document.getElementById('quizResult').textContent = `Você acertou ${score} de 10 questões.`;
+    });
+  </script>
+</body>
+</html>
